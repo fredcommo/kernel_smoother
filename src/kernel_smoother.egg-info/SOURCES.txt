@@ -1,0 +1,12 @@
+LICENCE
+README.md
+pyproject.toml
+setup.py
+src/kernel_smoother/__init__.py
+src/kernel_smoother/estimate_bandwidth.py
+src/kernel_smoother/kernels.py
+src/kernel_smoother/smoother.py
+src/kernel_smoother.egg-info/PKG-INFO
+src/kernel_smoother.egg-info/SOURCES.txt
+src/kernel_smoother.egg-info/dependency_links.txt
+src/kernel_smoother.egg-info/top_level.txt
