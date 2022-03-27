@@ -57,7 +57,7 @@ jobs:
         retention-days: 30
 
     - name: Save pytest results
-      uses: DamianReeves/write-file-action
+      uses: DamianReeves/write-file-action@v1
       with:
         path: tests/log/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
         contents: |
