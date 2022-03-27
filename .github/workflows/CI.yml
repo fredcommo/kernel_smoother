@@ -60,7 +60,7 @@ jobs:
       uses: DamianReeves/write-file-action@v1.0
       with:
         path: ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
-        contents: echo ${{ pytest --cov=src --cov-report term-missing }}
+        contents: echo pytest --cov=src --cov-report term-missing
         write-mode: overwrite
 
     - name: Commit pytest results
