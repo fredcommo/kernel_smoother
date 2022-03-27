@@ -43,15 +43,15 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     
-    - name: Test with pytest
-      run: |
-        pytest --cov-report html:tests/logs --cov=src  tests > ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git pull origin main
-        git add tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
-        git commit -m "Updated pytest results"
-        git push origin main
+    # - name: Test with pytest
+    #   run: |
+    #     pytest --cov-report html:tests/logs --cov=src  tests > ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
+    #     git config --local user.email "action@github.com"
+    #     git config --local user.name "GitHub Action"
+    #     git pull origin main
+    #     git add tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
+    #     git commit -m "Updated pytest results"
+    #     git push origin main
     
     - name: Save pytest logs if failure
       uses: actions/upload-artifact@v2
