@@ -21,6 +21,7 @@ from src.kernel_smoother.smoother import kern_smooth
         ]
 )
 def test_kern_smooth_no_failure(h, scale, kernel):
+    np.random.seed(1)
     x = np.linspace(0, 10, num=200)
     y = np.sin(x) + np.random.normal(loc=0, scale=scale, size=len(x))
     ysmooth = kern_smooth(x, y, K=kernel, h=h)
