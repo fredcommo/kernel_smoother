@@ -1,1 +1,15 @@
-echo "MESSAGE={{ pytest --cov=src --cov-report term-missing }}"
+============================= test session starts ==============================
+platform linux -- Python 3.8.12, pytest-7.1.1, pluggy-1.0.0
+rootdir: /home/runner/work/kernel_smoother/kernel_smoother
+plugins: cov-3.0.0
+collected 35 items
+
+tests/test_estimate_bandwidth.py ....                                    [ 11%]
+tests/test_kernels.py .....................                              [ 71%]
+tests/test_smoother.py ..........                                        [100%]
+
+---------- coverage: platform linux, python 3.8.12-final-0 -----------
+Coverage HTML written to dir tests/logs
+
+
+============================== 35 passed in 0.97s ==============================
