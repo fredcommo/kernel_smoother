@@ -57,16 +57,11 @@ jobs:
         retention-days: 30
 
     - name: Generate pytest results
-      run: pytest --cov=src --cov-report term-missing > ${{ path }}
+      uses: DamianReeves/write-file-action@v1.0
       with:
         path: ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
-
-    # - name: Generate pytest results
-    #   uses: DamianReeves/write-file-action@v1.0
-    #   with:
-    #     path: ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
-    #     contents: echo $(pytest --cov=src --cov-report term-missing)
-    #     write-mode: overwrite
+        contents: echo "MESSAGE={{ pytest --cov=src --cov-report term-missing }}"
+        write-mode: overwrite
 
     - name: Commit pytest results
       run: |
