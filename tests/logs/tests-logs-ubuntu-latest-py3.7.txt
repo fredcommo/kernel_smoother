@@ -1,1 +1,1 @@
-echo pytest --cov=src --cov-report term-missing
+echo $(pytest --cov=src --cov-report term-missing)
