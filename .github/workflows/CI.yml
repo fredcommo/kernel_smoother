@@ -59,10 +59,14 @@ jobs:
     - name: Save pytest results
       uses: DamianReeves/write-file-action@v1.0
       with:
-        path: tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
+        path: ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
         contents: |
           pytest --cov=src --cov-report term-missing
         write-mode: overwrite
+      # run: |
+      #   git add .
+      #   git commit -m "Updated pytest results"
+      #   git push origin main
 
     - name: build package
       run: |
