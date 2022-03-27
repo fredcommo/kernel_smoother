@@ -68,7 +68,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git pull origin main
-        git add .
+        git add tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
         git commit -m "Updated pytest results"
         git push origin main
 
