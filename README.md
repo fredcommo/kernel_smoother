@@ -2,7 +2,6 @@
 
 ![Test-Badge](https://github.com/fredcommo/kernel_smoother/actions/workflows/CI.yml/badge.svg)
 
-![Test-Report](https://github.com/fredcommo/kernel_smoother/blob/c85b5bea94cccf19c1f8ad2a647820f60ee5dfd7/tests/logs/tests-logs-ubuntu-latest-py3.8.txt)
 
 ## Install
 Either clone the repo, or install from git as follows:
