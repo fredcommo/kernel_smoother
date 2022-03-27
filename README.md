@@ -1,5 +1,7 @@
 # To perform kernel smoothing
 
+![Test-Badge](https://github.com/fredcommo/kernel_smoother/actions/workflows/CI.yml/badge.svg)
+
 ## Install
 Either clone the repo, or install from git as follows:
 
