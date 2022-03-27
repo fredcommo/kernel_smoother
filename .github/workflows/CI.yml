@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: Test
+name: Test & Build
 
 on:
   push:
@@ -43,9 +43,9 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     
-    - name: Test with pytest
-      run: |
-        pytest --cov-report html:tests/logs --cov=src  tests
+    # - name: Test with pytest
+    #   run: |
+    #     pytest --cov-report html:tests/logs --cov=src  tests
     
     - name: Save pytest logs if failure
       uses: actions/upload-artifact@v2
@@ -57,11 +57,16 @@ jobs:
         retention-days: 30
 
     - name: Generate pytest results
-      uses: DamianReeves/write-file-action@v1.0
+      run: pytest --cov=src --cov-report term-missing > ${{ path }}
       with:
         path: ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
-        contents: echo $(pytest --cov=src --cov-report term-missing)
-        write-mode: overwrite
+
+    # - name: Generate pytest results
+    #   uses: DamianReeves/write-file-action@v1.0
+    #   with:
+    #     path: ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
+    #     contents: echo $(pytest --cov=src --cov-report term-missing)
+    #     write-mode: overwrite
 
     - name: Commit pytest results
       run: |
