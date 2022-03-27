@@ -56,14 +56,18 @@ jobs:
           tests/logs
         retention-days: 30
 
-    - name: Save pytest results
+    - name: Generate pytest results
       uses: DamianReeves/write-file-action@v1.0
       with:
         path: ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
         contents: |
           pytest --cov=src --cov-report term-missing
         write-mode: overwrite
+
+    - name: Commit pytest results
       run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         git add .
         git commit -m "Updated pytest results"
         git push origin main
