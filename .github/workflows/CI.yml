@@ -63,10 +63,10 @@ jobs:
         contents: |
           pytest --cov=src --cov-report term-missing
         write-mode: overwrite
-      # run: |
-      #   git add .
-      #   git commit -m "Updated pytest results"
-      #   git push origin main
+      run: |
+        git add .
+        git commit -m "Updated pytest results"
+        git push origin main
 
     - name: build package
       run: |
