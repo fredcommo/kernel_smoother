@@ -53,15 +53,6 @@ jobs:
     #     git commit -m "Updated pytest results"
     #     git push origin main
     
-    - name: Save pytest logs if failure
-      uses: actions/upload-artifact@v2
-      if: ${{ failure() }}
-      with:
-        name: tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}
-        path: |
-          tests/logs
-        retention-days: 30
-
     # - name: Commit pytest results
     #   run: |
     #     git config --local user.email "action@github.com"
@@ -70,6 +61,20 @@ jobs:
     #     git add tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
     #     git commit -m "Updated pytest results"
     #     git push origin main
+
+    # > ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
+    - name: Test with pytest
+      run: |
+        pytest --cov=src --cov-report term-missing tests
+
+    - name: Save pytest logs if failure
+      uses: actions/upload-artifact@v2
+      if: ${{ failure() }}
+      with:
+        name: tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}
+        path: |
+          tests/logs
+        retention-days: 30
 
     - name: build package
       run: |
@@ -80,3 +85,4 @@ jobs:
       run: |
         python setup.py install
         python demo.py
+
