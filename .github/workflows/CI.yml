@@ -64,8 +64,10 @@ jobs:
 
     # > ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
     - name: Test with pytest
+      env:
+        filename: ${{ github.workspace }}/tests/logs/tests-logs-${{ matrix.os }}-py${{ matrix.python-version }}.txt
       run: |
-        pytest --cov=src --cov-report term-missing tests
+        pytest --cov=src --cov-report term-missing tests > $filename
 
     - name: Save pytest logs if failure
       uses: actions/upload-artifact@v2
