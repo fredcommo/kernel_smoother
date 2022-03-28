@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from kernel_smoother.smoother import kern_smooth
 
 x = np.linspace(0, 10, num=200)
@@ -10,7 +9,7 @@ kernels = ["gaussian", "triangular", "Epanechnikov"]
 for k in kernels:
     y_smooth = kern_smooth(x, y, K=k)
     print(np.mean((y_smooth - y)**2)*(1/2))
-    
+
 # plt.scatter(x, y, s=10, c='grey')
 
 # kernels = ["gaussian", "triangular", "Epanechnikov"]
