@@ -34,5 +34,5 @@ def test_kern_smooth_bad_kernel():
     with pytest.raises(Exception):
         kern_smooth(x, y, K="foo", h=1)
 
-def test_false():
-    assert False    
+# def test_false():
+#     assert False    
