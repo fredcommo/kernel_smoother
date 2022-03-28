@@ -33,4 +33,6 @@ def test_kern_smooth_bad_kernel():
     y = np.sin(x) + np.random.normal(loc=0, scale=1, size=len(x))
     with pytest.raises(Exception):
         kern_smooth(x, y, K="foo", h=1)
-    
+
+def test_false():
+    assert False    
