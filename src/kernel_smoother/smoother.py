@@ -3,8 +3,8 @@ import sys
 sys.path.insert(0, '../src')
 
 import numpy as np
-from src.kernel_smoother.estimate_bandwidth import bandwidth
-from src.kernel_smoother.kernels import *
+from kernel_smoother.estimate_bandwidth import bandwidth
+from kernel_smoother.kernels import *
 
 def kern_smooth(x, y, K="gaussian", h=None):
     """
