@@ -1,5 +1,6 @@
 import sys
-sys.path.append("src")
+# sys.path.append("src")
+sys.path.insert(0, '../src')
 
 import pytest
 import numpy as np

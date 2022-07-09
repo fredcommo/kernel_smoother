@@ -1,5 +1,6 @@
 import sys
-sys.path.append("src")
+# sys.path.append("src")
+sys.path.insert(0, '../src')
 
 import numpy as np
 from src.kernel_smoother.estimate_bandwidth import bandwidth
