@@ -5,7 +5,7 @@ sys.path.insert(0, '../src')
 import pytest
 import numpy as np
 import pandas as pd
-from src.kernel_smoother.kernels import gaussian, triangular, Epanechnikov
+from kernel_smoother.kernels import gaussian, triangular, Epanechnikov
 
 
 class Test_Gaussian:
