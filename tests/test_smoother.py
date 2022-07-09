@@ -1,11 +1,11 @@
 import sys
 # sys.path.append("src")
-# sys.path.insert(0, '../src')
+sys.path.insert(0, '../src')
 
 import pytest
 import numpy as np
-from kernel_smoother.kernels import gaussian, triangular, Epanechnikov
-from kernel_smoother.smoother import kern_smooth
+from src.kernel_smoother.kernels import gaussian, triangular, Epanechnikov
+from src.kernel_smoother.smoother import kern_smooth
 
 @pytest.mark.parametrize(
     "h, scale, kernel",

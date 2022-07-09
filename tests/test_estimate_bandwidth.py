@@ -3,7 +3,7 @@ import sys
 sys.path.insert(0, '../src')
 
 import pytest
-from kernel_smoother.estimate_bandwidth import bandwidth
+from src.kernel_smoother.estimate_bandwidth import bandwidth
 
 @pytest.mark.parametrize(
     "y, expected",
