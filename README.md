@@ -1,7 +1,9 @@
 # To perform kernel smoothing
 
 ![Test-Badge](https://github.com/fredcommo/kernel_smoother/actions/workflows/CI.yml/badge.svg)
-
+[![python version](https://img.shields.io/badge/python-3.6%7C3.7%7C3.8%7C3.9-blue)](https://github.com/fredcommo/kernel_smoother.git)
+[![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
+[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
 
 ## Install
 Either clone the repo, or install from git as follows:
