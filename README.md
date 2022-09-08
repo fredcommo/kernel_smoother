@@ -32,6 +32,8 @@ plt.legend(kernels, title="Kernels")
 plt.show()
 ```
 
-### Other possible outputs:
+![illustrations](figures/Figure_1.png "Some examples of kernel smoothing")
 
-![illustrations](demo_plot.png "Some examples of kernel smoothing")
+### Other examples:
+
+![illustrations](figures/Figure_2.png "Some examples of kernel smoothing")
