@@ -63,6 +63,10 @@ jobs:
       with: 
         fetch-depth: 0
 
+    - name: Run pytest again
+      run: |
+        pytest --cov=src --cov-report term-missing tests
+
     - name: Coverage Badge
       uses: tj-actions/coverage-badge-py@v1.8
 
