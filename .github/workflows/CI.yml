@@ -87,9 +87,10 @@ jobs:
     - name: Commit files
       if: steps.changed_files.outputs.files_changed == 'true'
       run: |
+        echo current branch: ${GITHUB_REF##*/}
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git pull origin ${{ github.ref }}
+        git pull origin ${GITHUB_REF##*/}
         git add coverage.svg
         git commit -m "Updated coverage.svg"
 
