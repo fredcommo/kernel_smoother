@@ -74,14 +74,14 @@ jobs:
       uses: tj-actions/verify-changed-files@v12
       id: changed_files
       with:
-        files: badges/coverage.svg
+        files: coverage.svg
 
     - name: Commit files
       if: steps.changed_files.outputs.files_changed == 'true'
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add badges/coverage.svg
+        git add coverage.svg
         git commit -m "Updated coverage.svg"
 
     - name: Push changes
@@ -89,7 +89,7 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.github_token }}
-        branch: ${{ github.head_ref }}
+        branch: ${{ github.ref }}
 
     - name: build package
       run: |
