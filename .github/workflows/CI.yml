@@ -59,9 +59,9 @@ jobs:
           tests/logs
         retention-days: 30
 
-    # - uses: actions/checkout@v2
-    #   with: 
-    #     fetch-depth: 0
+    - uses: actions/checkout@v2
+      with: 
+        fetch-depth: 0
 
     # - name: Coverage Badge
     #   uses: tj-actions/coverage-badge-py@v1.8
