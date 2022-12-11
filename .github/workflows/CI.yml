@@ -59,7 +59,7 @@ jobs:
           tests/logs
         retention-days: 30
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with: 
         fetch-depth: 0
 
@@ -90,7 +90,6 @@ jobs:
         echo current branch: ${GITHUB_REF##*/}
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git branch --track ${GITHUB_REF##*/} origin/${GITHUB_REF##*/}
         git pull origin ${GITHUB_REF##*/}
         git add coverage.svg
         git commit -m "Updated coverage.svg"
