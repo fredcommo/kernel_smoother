@@ -123,8 +123,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git fetch --all
-          git reset --hard origin/${GITHUB_REF##*/}
           git add coverage.svg
           git commit -m "Updated coverage.svg"
 
