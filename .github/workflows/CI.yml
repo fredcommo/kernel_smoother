@@ -70,11 +70,11 @@ jobs:
     - name: Coverage Badge
       uses: tj-actions/coverage-badge-py@v1.8
 
-    # - name: Verify Changed files
-    #   uses: tj-actions/verify-changed-files@v12
-    #   id: changed_files
-    #   with:
-    #     files: coverage.svg
+    - name: Verify Changed files
+      uses: tj-actions/verify-changed-files@v12
+      id: changed_files
+      with:
+        files: badges/coverage.svg
 
     # - name: Commit files
     #   if: steps.changed_files.outputs.files_changed == 'true'
