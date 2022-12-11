@@ -76,6 +76,14 @@ jobs:
       with:
         files: coverage.svg
 
+    - name: Test git pull
+      run: |
+        echo simple ref $github.ref
+        echo complex ref ${{ github.ref }}
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git pull $github.ref
+
     - name: Commit files
       if: steps.changed_files.outputs.files_changed == 'true'
       run: |
@@ -83,7 +91,7 @@ jobs:
         echo complex ref ${{ github.ref }}
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git pull $github.ref
+        git pull origin $github.ref
         git add coverage.svg
         git commit -m "Updated coverage.svg"
 
