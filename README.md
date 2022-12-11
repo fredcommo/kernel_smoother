@@ -1,6 +1,6 @@
 # To perform kernel smoothing
 
-[![Test & Build](https://github.com/fredcommo/kernel_smoother/actions/workflows/CI.yml/badge.svg)](https://github.com/fredcommo/kernel_smoother/actions/workflows/CI.yml)
+[![Test & Build](https://github.com/fredcommo/kernel_smoother/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/fredcommo/kernel_smoother/actions/workflows/CI.yml)
 ![coverage](https://github.com/fredcommo/kernel_smoother/blob/main/coverage.svg?raw=true)
 [![python version](https://img.shields.io/badge/python-3.6%7C3.7%7C3.8%7C3.9-blue)](https://github.com/fredcommo/kernel_smoother.git)
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
